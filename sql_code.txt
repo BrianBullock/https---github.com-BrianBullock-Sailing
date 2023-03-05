@@ -24,3 +24,11 @@ CRUS_PTS = if(`CRU_CAN_ATL` = 1,1,0) + if(`CRU_US_ATL` = 1,1,0) + if(`CRU_BAHAMA
 
 SCORE = `GLAM_PTS` + `BOAT_PTS` + `VID_PTS` + `CREW_PTS` + `CROS_PTS` + `VIEWS_PTS` + `SUBS_PTS` + `DUR_PTS` + `FREQ_PTS` + `CRUS_PTS`
 
+
+insta
+
+<a target="_blank" href="">Instagram</a>
+
+Facebook
+
+<a target="_blank" href="">Facebook</a>
