@@ -185,7 +185,7 @@ margin-left: 20px;
   border-radius: 15px;
   align-items: center;
   padding-top: 5px;
-  height: 590px;
+  height: 585px;
 }
 .details--items{
   display: grid;
@@ -471,14 +471,14 @@ footer{
   .main--container{
   display: grid;
   grid-template-columns: 1030px;
-  grid-template-rows: 880px 380px;
+  grid-template-rows: 880px 400px;
   margin-top: 10px;
   margin-bottom: 30px;
 }
 .main--right{
   display: grid;
   grid-template-columns: 700px 320px;
-  grid-template-rows: 70px 325px;
+  grid-template-rows: 70px 330px;
   grid-template-areas: 
     "video desc"
     "video list";
