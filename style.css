@@ -148,10 +148,10 @@ font-size: 14px;
 
 .main--container{
   display: grid;
-  grid-template-columns: 1030px 820px;
-  grid-template-rows: 880px;
+  grid-template-columns: 1030px 825px;
+  grid-template-rows: 890px;
   margin-top: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .main--container h3{
   color: lightgrey;
