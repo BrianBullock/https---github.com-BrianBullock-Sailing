@@ -149,7 +149,7 @@ font-size: 14px;
 .main--container{
   display: grid;
   grid-template-columns: 1030px 825px;
-  grid-template-rows: 910px;
+  grid-template-rows: 920px;
   margin-top: 10px;
   margin-bottom: 20px;
 }
@@ -186,7 +186,7 @@ margin-left: 20px;
   border-radius: 15px;
   align-items: center;
   padding-top: 5px;
-  height: 610px;
+  height: 620px;
 }
 .details--items{
   display: grid;
@@ -249,7 +249,7 @@ text-align: center;
 .crossing--container{
   border: 1px solid antiquewhite;
   border-radius: 15px;
-  height: 194px;
+  height: 204px;
   padding-top: 7px;
   padding-left: 15px;
 }
@@ -273,7 +273,7 @@ text-align: center;
   border: 1px solid antiquewhite;
   border-radius: 15px;
   margin-left: 30px;
-  height: 194px;
+  height: 204px;
   padding-top: 5px;
 }
 .chan--cont--items{
@@ -313,7 +313,7 @@ text-align: center;
   border: 1px solid antiquewhite;
   border-radius: 15px;
   width: 250px;
-  height: 351px;
+  height: 361px;
   padding-top: 15px;
 }
 .rating--list ol{
@@ -475,14 +475,14 @@ footer{
   .main--container{
   display: grid;
   grid-template-columns: 1030px;
-  grid-template-rows: 880px 400px;
+  grid-template-rows: 920px 1fr;
   margin-top: 10px;
   margin-bottom: 30px;
 }
 .main--right{
   display: grid;
   grid-template-columns: 700px 320px;
-  grid-template-rows: 70px 330px;
+  grid-template-rows: 70px 1fr;
   grid-template-areas: 
     "video desc"
     "video list";
