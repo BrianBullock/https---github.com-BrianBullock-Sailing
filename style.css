@@ -250,7 +250,7 @@ text-align: center;
   border: 1px solid antiquewhite;
   border-radius: 15px;
   height: 204px;
-  padding-top: 7px;
+  padding-top: 12px;
   padding-left: 15px;
 }
 .cross--items{
@@ -274,13 +274,12 @@ text-align: center;
   border-radius: 15px;
   margin-left: 30px;
   height: 204px;
-  padding-top: 5px;
+  padding-top: 12px;
 }
 .chan--cont--items{
   display: grid;
   grid-template-columns: 132px 40px;
   margin-top: 20px;
-
   align-items: center;
 }
 .chan--cont--name{
@@ -513,6 +512,7 @@ footer{
   width: 250px;
   height: 316px;
   margin-left: 40px;
+  padding-top: 5px;
   }
   .rating--list ol{
   list-style-type: none;
