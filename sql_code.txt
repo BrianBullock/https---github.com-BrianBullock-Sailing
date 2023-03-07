@@ -1,3 +1,7 @@
+google api key = AIzaSyAnWb9Zjku1zfAfjinTelFCOwU3jZFVaU4
+
+
+
 CHANNEL_STATUS = case when `END_DATE` is null then 'Running' else 'Ended' end
 
 RUN_DAYS = if(`END_DATE` is null,to_days(curdate()) - to_days(`START_DATE`),to_days(`END_DATE`) - to_days(`START_DATE`))
@@ -29,6 +33,189 @@ insta
 
 <a target="_blank" href="">Instagram</a>
 
+
+
 Facebook
 
 <a target="_blank" href="">Facebook</a>
+
+
+php code to get the youtube data-----
+
+
+<?php
+// Database configuration
+$host = 'localhost';
+$username = 'your_username';
+$password = 'your_password';
+$database = 'sailing';
+
+// Connect to the database
+$conn = mysqli_connect($host, $username, $password, $database);
+
+// Check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+// Select all the records from the database
+$sql = "SELECT CHANNEL_ID FROM channel";
+$result = mysqli_query($conn, $sql);
+
+// Loop through each record and fetch the data from the YouTube API
+while ($row = mysqli_fetch_assoc($result)) {
+  $channelId = $row['CHANNEL_ID'];
+  $apiEndpoint = "https://www.googleapis.com/youtube/v3/channels?part=statistics&id=$channelId&key=YOUR_API_KEY";
+  $json = file_get_contents($apiEndpoint);
+  $data = json_decode($json);
+
+  // Extract the subscriber count, video count, and views from the API response
+  $subscriberCount = $data->items[0]->statistics->subscriberCount;
+  $videoCount = $data->items[0]->statistics->videoCount;
+  $viewCount = $data->items[0]->statistics->viewCount;
+
+  // Update the table with the fetched data
+  $sqlUpdate = "UPDATE channel SET SUBS='$subscriberCount', VIEWS='$viewCount', VIDEOS='$videoCount' WHERE CHANNEL_ID='$channelId'";
+  mysqli_query($conn, $sqlUpdate);
+}
+
+// Close the database connection
+mysqli_close($conn);
+?>
+
+
+php code to include channel name------
+
+<?php
+// Database connection details
+$servername = "localhost";
+$username = "your_username";
+$password = "your_password";
+$dbname = "your_database_name";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Get the list of channels to update from the database
+$sql = "SELECT * FROM channel";
+$result = $conn->query($sql);
+
+// Loop through each channel and update its stats
+while ($row = $result->fetch_assoc()) {
+    $channelId = $row["CHANNEL_ID"];
+    $apiKey = "your_api_key";
+
+    // Make a request to the YouTube Data API to get the channel statistics
+    $url = "https://www.googleapis.com/youtube/v3/channels?part=statistics&id=" . $channelId . "&key=" . $apiKey;
+    $response = file_get_contents($url);
+    $json = json_decode($response, true);
+
+    // Extract the statistics from the API response
+    $subscriberCount = $json["items"][0]["statistics"]["subscriberCount"];
+    $viewCount = $json["items"][0]["statistics"]["viewCount"];
+    $videoCount = $json["items"][0]["statistics"]["videoCount"];
+    $channelName = $json["items"][0]["snippet"]["title"];
+
+    // Update the database with the new statistics
+    $sql = "UPDATE channel SET SUBS='" . $subscriberCount . "', VIEWS='" . $viewCount . "', VIDEOS='" . $videoCount . "', CHANNEL_NAME='" . $channelName . "' WHERE CHANNEL_ID='" . $channelId . "'";
+    $conn->query($sql);
+}
+
+// Close the database connection
+$conn->close();
+?>
+
+
+youtube data in json format-----
+
+
+{
+  "kind": "youtube#channel",
+  "etag": etag,
+  "id": string,
+  "snippet": {
+    "title": string,
+    "description": string,
+    "customUrl": string,
+    "publishedAt": datetime,
+    "thumbnails": {
+      (key): {
+        "url": string,
+        "width": unsigned integer,
+        "height": unsigned integer
+      }
+    },
+    "defaultLanguage": string,
+    "localized": {
+      "title": string,
+      "description": string
+    },
+    "country": string
+  },
+  "contentDetails": {
+    "relatedPlaylists": {
+      "likes": string,
+      "favorites": string,
+      "uploads": string
+    }
+  },
+  "statistics": {
+    "viewCount": unsigned long,
+    "subscriberCount": unsigned long,  // this value is rounded to three significant figures
+    "hiddenSubscriberCount": boolean,
+    "videoCount": unsigned long
+  },
+  "topicDetails": {
+    "topicIds": [
+      string
+    ],
+    "topicCategories": [
+      string
+    ]
+  },
+  "status": {
+    "privacyStatus": string,
+    "isLinked": boolean,
+    "longUploadsStatus": string,
+    "madeForKids": boolean,
+    "selfDeclaredMadeForKids": boolean
+  },
+  "brandingSettings": {
+    "channel": {
+      "title": string,
+      "description": string,
+      "keywords": string,
+      "trackingAnalyticsAccountId": string,
+      "moderateComments": boolean,
+      "unsubscribedTrailer": string,
+      "defaultLanguage": string,
+      "country": string
+    },
+    "watch": {
+      "textColor": string,
+      "backgroundColor": string,
+      "featuredPlaylistId": string
+    }
+  },
+  "auditDetails": {
+    "overallGoodStanding": boolean,
+    "communityGuidelinesGoodStanding": boolean,
+    "copyrightStrikesGoodStanding": boolean,
+    "contentIdClaimsGoodStanding": boolean
+  },
+  "contentOwnerDetails": {
+    "contentOwner": string,
+    "timeLinked": datetime
+  },
+  "localizations": {
+    (key): {
+      "title": string,
+      "description": string
+    }
+  }
+}
