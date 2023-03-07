@@ -153,6 +153,63 @@ font-size: 14px;
   margin-top: 10px;
   margin-bottom: 20px;
 }
+
+/* .main--container{
+  display: grid;
+  grid-template-columns: repeat(8, 100px);
+  grid-template-rows: repeat(8, 100px);
+  grid-template-areas: 
+  "g1    g1    g1    g1    g1    g1    g11    g11"
+  "g2    g2    g2    g2    g2    g2    g11    g11"
+  "g3    g3    g4    g4    g4    g4    g11    g11"
+  "g5    g5    g6    g6    g6    g6    g11    g11"
+  "g5    g5    g6    g6    g6    g6    g12    g12"
+  "g5    g5    g6    g6    g6    g6    g13    g13"
+  "g5    g5    g7    g7    g9    g9    g13    g13"
+  "g5    g5    g8    g8    g10   g10   g13    g13";
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.desc--title{
+  grid-area: g1;
+}
+.channel--description{
+  grid-area: g2;
+}
+.desc--detail{
+  grid-area: g3;
+}
+.desc--cruising{
+  grid-area: g4;
+}
+.details--container{
+  grid-area: g5;
+}
+.cruising--detail{
+  grid-area: g6;
+}
+.crossing--desc{
+  grid-area: g7;
+}
+.crossing--container{
+  grid-area: g8;
+}
+.channel--type--desc{
+  grid-area: g9;
+}
+.channel--type--container{
+  grid-area: g10;
+}
+.video{
+  grid-area: g11;
+}
+.rating--desc{
+  grid-area: g12;
+}
+.ratings--container{
+  grid-area: g13;
+} */
+
 .main--container h3{
   color: lightgrey;
 }
@@ -185,7 +242,7 @@ margin-left: 20px;
   border-radius: 15px;
   align-items: center;
   padding-top: 5px;
-  height: 585px;
+  height: 590px;
 }
 .details--items{
   display: grid;
@@ -220,7 +277,7 @@ margin-left: 20px;
   border-radius: 15px;
   margin-left: 30px;
   padding-top: 5px;
-  width: 570px
+  width: 570px;
 }
 .cruise--items{
   display: grid;
@@ -248,14 +305,14 @@ text-align: center;
 .crossing--container{
   border: 1px solid antiquewhite;
   border-radius: 15px;
-  height: 177px;
+  height: 174px;
   padding-top: 2px;
 }
 .cross--items{
   display: grid;
   grid-template-columns: 150px 45px;
-  margin-top: 6px;
-  padding-left: 12px;
+  margin-top: 5px;
+  padding-left: 11px;
 }
 .cross--name{
   text-align: right;
@@ -271,12 +328,12 @@ text-align: center;
   border: 1px solid antiquewhite;
   border-radius: 15px;
   margin-left: 30px;
-  height: 177px;
+  height: 174px;
 }
 .chan--cont--items{
   display: grid;
   grid-template-columns: 132px 40px;
-  margin-top: 19px;
+  margin-top: 17px;
 
   align-items: center;
 }
@@ -310,7 +367,7 @@ text-align: center;
   border: 1px solid antiquewhite;
   border-radius: 15px;
   width: 250px;
-  height: 316px;
+  height: 321px;
 }
 .rating--list ol{
   list-style-type: none;
