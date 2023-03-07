@@ -512,11 +512,11 @@ footer{
   width: 250px;
   height: 316px;
   margin-left: 40px;
-  padding-top: 5px;
+  padding-top: 1px;
   }
   .rating--list ol{
   list-style-type: none;
-  margin-left: 35px;
+  margin-left: 30px;
   margin-top: 15px;
   margin-bottom: 10px;
   max-width: 215px;
