@@ -149,66 +149,10 @@ font-size: 14px;
 .main--container{
   display: grid;
   grid-template-columns: 1030px 825px;
-  grid-template-rows: 890px;
+  grid-template-rows: 910px;
   margin-top: 10px;
   margin-bottom: 20px;
 }
-
-/* .main--container{
-  display: grid;
-  grid-template-columns: repeat(8, 100px);
-  grid-template-rows: repeat(8, 100px);
-  grid-template-areas: 
-  "g1    g1    g1    g1    g1    g1    g11    g11"
-  "g2    g2    g2    g2    g2    g2    g11    g11"
-  "g3    g3    g4    g4    g4    g4    g11    g11"
-  "g5    g5    g6    g6    g6    g6    g11    g11"
-  "g5    g5    g6    g6    g6    g6    g12    g12"
-  "g5    g5    g6    g6    g6    g6    g13    g13"
-  "g5    g5    g7    g7    g9    g9    g13    g13"
-  "g5    g5    g8    g8    g10   g10   g13    g13";
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-.desc--title{
-  grid-area: g1;
-}
-.channel--description{
-  grid-area: g2;
-}
-.desc--detail{
-  grid-area: g3;
-}
-.desc--cruising{
-  grid-area: g4;
-}
-.details--container{
-  grid-area: g5;
-}
-.cruising--detail{
-  grid-area: g6;
-}
-.crossing--desc{
-  grid-area: g7;
-}
-.crossing--container{
-  grid-area: g8;
-}
-.channel--type--desc{
-  grid-area: g9;
-}
-.channel--type--container{
-  grid-area: g10;
-}
-.video{
-  grid-area: g11;
-}
-.rating--desc{
-  grid-area: g12;
-}
-.ratings--container{
-  grid-area: g13;
-} */
 
 .main--container h3{
   color: lightgrey;
@@ -232,7 +176,7 @@ margin-left: 20px;
 .content--container{
   display: grid;
   grid-template-columns: 400px 600px;
-  grid-template-rows: 30px 590px;
+  grid-template-rows: 30px 1fr;
 }
 .desc--detail{
   margin-left: 20px;
@@ -242,7 +186,7 @@ margin-left: 20px;
   border-radius: 15px;
   align-items: center;
   padding-top: 5px;
-  height: 590px;
+  height: 610px;
 }
 .details--items{
   display: grid;
@@ -295,7 +239,7 @@ text-align: center;
 .cruising--sub--container{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 30px 180px;
+  grid-template-rows: 30px 1fr;
   margin-left: 30px;
   margin-top: 15px;
 }
@@ -305,13 +249,14 @@ text-align: center;
 .crossing--container{
   border: 1px solid antiquewhite;
   border-radius: 15px;
-  height: 174px;
-  padding-top: 2px;
+  height: 194px;
+  padding-top: 7px;
+  padding-left: 15px;
 }
 .cross--items{
   display: grid;
   grid-template-columns: 150px 45px;
-  margin-top: 5px;
+  margin-top: 6px;
   padding-left: 11px;
 }
 .cross--name{
@@ -328,12 +273,13 @@ text-align: center;
   border: 1px solid antiquewhite;
   border-radius: 15px;
   margin-left: 30px;
-  height: 174px;
+  height: 194px;
+  padding-top: 5px;
 }
 .chan--cont--items{
   display: grid;
   grid-template-columns: 132px 40px;
-  margin-top: 17px;
+  margin-top: 20px;
 
   align-items: center;
 }
@@ -367,7 +313,8 @@ text-align: center;
   border: 1px solid antiquewhite;
   border-radius: 15px;
   width: 250px;
-  height: 321px;
+  height: 351px;
+  padding-top: 15px;
 }
 .rating--list ol{
   list-style-type: none;
